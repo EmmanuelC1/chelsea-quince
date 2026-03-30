@@ -23,13 +23,16 @@ const es = {
     honorChambelan: 'Chambelán de Honor',
     dama: 'Dama',
     chambelan: 'Chambelán',
+    dedicationLabel: 'Una dedicatoria',
+    closeLabel: 'Cerrar',
+    coupleLabel: 'Pareja',
   },
   padrinos: {
     heading: 'Padrinos y Madrinas',
-    subheading:
-      'Con profundo agradecimiento a quienes hicieron posible esta noche.',
+    subheading: 'Con profundo agradecimiento.',
     gratitude:
       'Cada detalle de esta celebración existe gracias al amor y generosidad de estas personas maravillosas. Su apoyo significa el mundo para Chelsea y su familia.',
+    sponsoredBy: 'Patrocinado por',
   },
   program: {
     heading: 'Programa de Esta Noche',

@@ -22,15 +22,19 @@ const en: TranslationKeys = {
   court: {
     heading: 'Court of Honor',
     subheading: 'The people closest to her heart.',
-    honorChambelan: 'Honor Chambelán',
+    honorChambelan: 'Chambelán de Honor',
     dama: 'Dama',
     chambelan: 'Chambelán',
+    dedicationLabel: 'A dedication',
+    closeLabel: 'Close',
+    coupleLabel: 'Couple',
   },
   padrinos: {
     heading: 'Padrinos & Madrinas',
-    subheading: 'With deep gratitude to those who made this evening possible.',
+    subheading: 'With deep gratitude.',
     gratitude:
       'Every detail of this celebration exists because of the love and generosity of these wonderful people. Their support means the world to Chelsea and her family.',
+    sponsoredBy: 'Sponsored by',
   },
   program: {
     heading: "Tonight's Program",
