@@ -23,7 +23,7 @@ export interface CourtCouple {
 export const honorChambelan: CourtMember = {
   id: 'mateo',
   firstName: 'Mateo',
-  lastName: '',
+  lastName: 'Villalobos',
   role: 'honor',
   image: null,
   placeholderColor: '#BFD7F6',
@@ -39,7 +39,7 @@ export const courtCouples: CourtCouple[] = [
     chambelan: {
       id: 'erick',
       firstName: 'Erick',
-      lastName: '',
+      lastName: 'Jimenez',
       role: 'chambelan',
       coupleId: 'couple-1',
       image: null,
@@ -52,7 +52,7 @@ export const courtCouples: CourtCouple[] = [
     dama: {
       id: 'erandi',
       firstName: 'Erandi',
-      lastName: '',
+      lastName: 'Tapia',
       role: 'dama',
       coupleId: 'couple-1',
       image: null,
@@ -68,7 +68,7 @@ export const courtCouples: CourtCouple[] = [
     chambelan: {
       id: 'gabriel',
       firstName: 'Gabriel',
-      lastName: '',
+      lastName: 'Nuñez',
       role: 'chambelan',
       coupleId: 'couple-2',
       image: null,
@@ -81,7 +81,7 @@ export const courtCouples: CourtCouple[] = [
     dama: {
       id: 'daniela',
       firstName: 'Daniela',
-      lastName: '',
+      lastName: 'Bonilla',
       role: 'dama',
       coupleId: 'couple-2',
       image: null,
@@ -97,7 +97,7 @@ export const courtCouples: CourtCouple[] = [
     chambelan: {
       id: 'dylan',
       firstName: 'Dylan',
-      lastName: '',
+      lastName: 'Cruz',
       role: 'chambelan',
       coupleId: 'couple-3',
       image: null,
@@ -110,7 +110,7 @@ export const courtCouples: CourtCouple[] = [
     dama: {
       id: 'marjorie',
       firstName: 'Marjorie',
-      lastName: '',
+      lastName: 'Muñoz',
       role: 'dama',
       coupleId: 'couple-3',
       image: null,
@@ -126,7 +126,7 @@ export const courtCouples: CourtCouple[] = [
     chambelan: {
       id: 'david',
       firstName: 'David',
-      lastName: '',
+      lastName: 'Zamora',
       role: 'chambelan',
       coupleId: 'couple-4',
       image: null,
@@ -139,7 +139,7 @@ export const courtCouples: CourtCouple[] = [
     dama: {
       id: 'cely',
       firstName: 'Cely',
-      lastName: '',
+      lastName: 'Villaseñor',
       role: 'dama',
       coupleId: 'couple-4',
       image: null,
