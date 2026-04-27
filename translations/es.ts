@@ -38,12 +38,21 @@ const es = {
     heading: 'Programa de Esta Noche',
     subheading: 'Una noche llena de momentos inolvidables.',
   },
+  // closing: {
+  //   heading: 'Quince Años de Recuerdos',
+  //   subheading: 'Gracias por celebrar con nosotros',
+  //   message:
+  //     'Esta noche es posible gracias al amor incondicional de la familia y amigos que han acompañado a Chelsea en cada paso de su vida.',
+  //   signature: 'Con amor, la familia Castillo',
+  // },
   closing: {
-    heading: 'Quince Años de Recuerdos',
-    subheading: 'Gracias por celebrar con nosotros',
+    label: 'Con Gratitud',
+    heading: 'Chelsea Castillo',
+    subheading: 'Quince Años de Recuerdos',
     message:
       'Esta noche es posible gracias al amor incondicional de la familia y amigos que han acompañado a Chelsea en cada paso de su vida.',
-    signature: 'Con amor, la familia Castillo',
+    signature: 'Con amor, La Familia Castillo',
+    year: '2026',
   },
   lang: {
     toggle: 'EN',

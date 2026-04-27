@@ -2,6 +2,8 @@ import HeroSection from '@/components/sections/HeroSection';
 import MemoryTimeline from '@/components/sections/MemoryTimeline';
 import CourtSection from '@/components/sections/CourtSection';
 import PadrinosSection from '@/components/sections/PadrinosSection';
+import ProgramSection from '@/components/sections/ProgramSection';
+import ClosingScene from '@/components/sections/ClosingScene';
 
 export default function Home() {
   return (
@@ -10,8 +12,8 @@ export default function Home() {
       <MemoryTimeline />
       <CourtSection />
       <PadrinosSection />
-      {/* ProgramSection   — coming soon */}
-      {/* ClosingScene     — coming soon */}
+      <ProgramSection />
+      <ClosingScene />
     </main>
   );
 }

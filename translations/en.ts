@@ -40,12 +40,21 @@ const en: TranslationKeys = {
     heading: "Tonight's Program",
     subheading: 'An evening filled with unforgettable moments.',
   },
+  // closing: {
+  //   heading: '15 Years of Memories',
+  //   subheading: 'Thank you for celebrating with us',
+  //   message:
+  //     'This evening is made possible by the unconditional love of the family and friends who have accompanied Chelsea at every step of her life.',
+  //   signature: 'With love, the Castillo family',
+  // },
   closing: {
-    heading: '15 Years of Memories',
-    subheading: 'Thank you for celebrating with us',
+    label: 'With Gratitude',
+    heading: 'Chelsea Castillo',
+    subheading: 'Fifteen years of memories',
     message:
       'This evening is made possible by the unconditional love of the family and friends who have accompanied Chelsea at every step of her life.',
-    signature: 'With love, the Castillo family',
+    signature: 'Con amor, La Familia Castillo',
+    year: '2026',
   },
   lang: {
     toggle: 'ES',

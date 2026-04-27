@@ -271,7 +271,7 @@ body {
 @keyframes featuredIn {
   from {
     opacity: 0;
-    transform: translateY(22px) scale(0.96);
+    transform: translateY(-16px) scale(0.96);
   }
 
   to {
