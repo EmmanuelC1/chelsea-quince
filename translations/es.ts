@@ -5,7 +5,7 @@ const es = {
   hero: {
     name: 'Chelsea Castillo',
     date: '2 de Mayo, 2026',
-    tagline: 'Quince Años',
+    tagline: 'Celebrando los quince años de',
     poem: 'Celebrando quince hermosos años de amor,\nfamilia y sueños. Hoy Chelsea inicia\nun nuevo capítulo rodeada de quienes\nmás la quieren.',
     cta: 'Explorar la Celebración',
   },

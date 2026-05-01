@@ -7,7 +7,7 @@ const en: TranslationKeys = {
   hero: {
     name: 'Chelsea Castillo',
     date: 'May 2nd, 2026',
-    tagline: 'Quinceañera',
+    tagline: 'Celebrating the quinceañera of',
     poem: 'Celebrating fifteen beautiful years of love,\nfamily, and dreams. Today Chelsea begins\na new chapter surrounded by those\nwho cherish her most.',
     cta: 'Explore the Celebration',
   },

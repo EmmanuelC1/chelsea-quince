@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '@/context/LangContext';
+import Image from 'next/image';
 
 // ─── Shared animation config ─────────────────────────────────────────────────
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
@@ -257,7 +258,7 @@ function PortraitPlaceholder() {
         />
 
         {/* CC monogram */}
-        <span
+        {/* <span
           style={{
             fontFamily: 'var(--font-cormorant)',
             fontSize: 'clamp(2rem, 6vw, 2.8rem)',
@@ -268,7 +269,17 @@ function PortraitPlaceholder() {
           }}
         >
           CC
-        </span>
+        </span> */}
+        <Image
+          src="/images/chelsea-closing.JPG"
+          alt="Chelsea Castillo"
+          fill
+          priority
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'top',
+          }}
+        />
       </div>
     </div>
   );

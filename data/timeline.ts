@@ -15,8 +15,21 @@ export interface ProgramEvent {
 
 export const programEvents: ProgramEvent[] = [
   {
+    id: 'cena',
+    time: '3:00 PM',
+    title: {
+      es: 'Cena',
+      en: 'Dinner',
+    },
+    description: {
+      es: 'Compartimos una cena especial en honor a Chelsea y su familia.',
+      en: 'We share a special dinner in honor of Chelsea and her family.',
+    },
+    icon: '◇',
+  },
+  {
     id: 'entrada',
-    time: '6:00 PM',
+    time: '4:30 PM',
     title: {
       es: 'Gran Entrada',
       en: 'Grand Entrance',
@@ -29,21 +42,8 @@ export const programEvents: ProgramEvent[] = [
     highlight: true,
   },
   {
-    id: 'cena',
-    time: '6:30 PM',
-    title: {
-      es: 'Cena',
-      en: 'Dinner',
-    },
-    description: {
-      es: 'Compartimos una cena especial en honor a Chelsea y su familia.',
-      en: 'We share a special dinner in honor of Chelsea and her family.',
-    },
-    icon: '◇',
-  },
-  {
     id: 'vals',
-    time: '7:30 PM',
+    time: '6:00 PM',
     title: {
       es: 'Vals de Honor',
       en: 'Waltz of Honor',
@@ -57,10 +57,10 @@ export const programEvents: ProgramEvent[] = [
   },
   {
     id: 'sorpresa',
-    time: '8:00 PM',
+    time: '6:30 PM',
     title: {
-      es: 'Baile Sorpresa',
-      en: 'Surprise Dance',
+      es: 'Bailes Sorpresa',
+      en: 'Surprise Dances',
     },
     description: {
       es: 'Una coreografía preparada con dedicación y mucho amor.',
@@ -70,7 +70,7 @@ export const programEvents: ProgramEvent[] = [
   },
   {
     id: 'pastel',
-    time: '8:30 PM',
+    time: '7:30 PM',
     title: {
       es: 'Brindis y Pastel',
       en: 'Toast & Cake',
@@ -84,7 +84,7 @@ export const programEvents: ProgramEvent[] = [
   },
   {
     id: 'baile',
-    time: '9:00 PM',
+    time: '8:00 PM',
     title: {
       es: 'Baile Libre',
       en: 'Open Dance Floor',
