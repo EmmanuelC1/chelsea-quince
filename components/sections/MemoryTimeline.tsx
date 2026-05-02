@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import Image from 'next/image';
 import { useLang } from '@/context/LangContext';
 import { memories, Memory } from '@/data/memories';
+import LangToggle from '../ui/LangToggle';
 
 function sr(seed: number) {
   const x = Math.sin(seed + 1) * 10000;
@@ -69,7 +71,6 @@ function Polaroid({
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
             background: '#FFFEF5',
-            // Taller bottom padding on featured to fit caption
             padding: isFeatured ? '10px 10px 12px' : '5px 5px 8px',
             boxShadow: isFeatured
               ? '0 14px 44px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08)'
@@ -77,22 +78,41 @@ function Polaroid({
             borderRadius: '2px',
           }}
         >
-          {/* Photo */}
+          {/* ── Photo area ── */}
           <div
             style={{
               width: '100%',
               aspectRatio: '1/1',
-              background: memory.image
-                ? `url(${memory.image}) center/cover`
-                : `linear-gradient(135deg, ${memory.placeholderColor}, ${memory.placeholderColor}bb)`,
+              position: 'relative',
+              overflow: 'hidden',
+              // Placeholder background always present — visible when image is null,
+              // sits behind the <Image> as a loading state when image is present
+              background: `linear-gradient(135deg, ${memory.placeholderColor}, ${memory.placeholderColor}bb)`,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              overflow: 'hidden',
             }}
           >
-            {!memory.image && (
+            {memory.image ? (
+              // ── Real photo ──
+              <Image
+                src={memory.image}
+                alt={memory.caption[locale]}
+                fill
+                priority={isFeatured}
+                sizes={
+                  isFeatured
+                    ? '(max-width: 640px) 56vw, 270px'
+                    : '(max-width: 640px) 26vw, 138px'
+                }
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: memory.imagePosition ?? 'center top',
+                }}
+              />
+            ) : (
+              // ── Placeholder ──
               <>
                 <span
                   style={{
@@ -239,7 +259,6 @@ function Polaroid({
                 background: 'rgba(191,215,246,0.7)',
               }}
             />
-            {/* Tap hint on back */}
             <p
               style={{
                 fontFamily: 'var(--font-body)',
@@ -298,7 +317,6 @@ function PolaroidStack({
               transformOrigin: 'center bottom',
             }}
           >
-            {/* Stack cards are NOT flippable — interaction is on the featured card */}
             <Polaroid
               memory={memory}
               locale={locale}
@@ -323,6 +341,7 @@ export default function MemoryTimeline() {
   const [isAllStacked, setIsAllStacked] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const prevIndexRef = useRef(0);
+  const directionRef = useRef<'forward' | 'backward'>('forward');
 
   const handleProgress = useCallback((progress: number) => {
     const total = memories.length;
@@ -341,12 +360,17 @@ export default function MemoryTimeline() {
     const withinCard = scaled - index;
 
     if (index !== prevIndexRef.current) {
+      directionRef.current =
+        index > prevIndexRef.current ? 'forward' : 'backward';
       setStackCount(index);
       prevIndexRef.current = index;
     }
 
     setActiveIndex(index);
-    setPhase(withinCard > 0.78 ? 'transitioning' : 'featured');
+    // Only trigger sendToStack animation when scrolling forward
+    const isTransitioning =
+      withinCard > 0.78 && directionRef.current === 'forward';
+    setPhase(isTransitioning ? 'transitioning' : 'featured');
   }, []);
 
   useEffect(() => {
@@ -366,6 +390,12 @@ export default function MemoryTimeline() {
         end: `+=${memories.length * 120}vh`,
         pin: true,
         pinSpacing: true,
+        snap: {
+          snapTo: memories.map((_, i) => i / (memories.length - 1)),
+          duration: { min: 0.6, max: 0.9 },
+          ease: 'power2.inOut',
+          delay: 0.12,
+        },
         onUpdate: self => handleProgress(self.progress),
       });
     }
@@ -376,6 +406,14 @@ export default function MemoryTimeline() {
 
   const currentMemory = memories[activeIndex];
 
+  // Preload the next memory's image so it's cached before it becomes active
+  useEffect(() => {
+    const next = memories[activeIndex + 1];
+    if (!next?.image) return;
+    const img = new window.Image();
+    img.src = next.image;
+  }, [activeIndex]);
+
   return (
     <section
       id="story"
@@ -383,6 +421,10 @@ export default function MemoryTimeline() {
         background: 'linear-gradient(180deg, var(--color-bg) 0%, #eef2f7 100%)',
       }}
     >
+      {/* ── Language toggle ── */}
+      <div style={{ position: 'relative', zIndex: 10 }}>
+        <LangToggle />
+      </div>
       {/* Heading */}
       <div style={{ textAlign: 'center', padding: '5rem 1.5rem 1rem' }}>
         <p

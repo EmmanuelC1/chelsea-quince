@@ -179,6 +179,15 @@ export const padrinosData: PadrinoCategory[] = [
     padrinos: [{ firstName: 'Hoddaly', lastName: 'Blanquet' }],
   },
   {
+    id: 'uñas',
+    icon: '✦',
+    category: {
+      es: 'Madrina de Uñas',
+      en: 'Nails Sponsor',
+    },
+    padrinos: [{ firstName: 'Julieta', lastName: 'Castillo' }],
+  },
+  {
     id: 'cerveza',
     icon: '✦',
     category: {
@@ -191,7 +200,7 @@ export const padrinosData: PadrinoCategory[] = [
     id: 'mesas-sillas',
     icon: '✦',
     category: {
-      es: 'Padrino de Mesas y Sillas',
+      es: 'Padrino de Mesas, Sillas y Decoraciones',
       en: 'Tables, Chairs & Decorations Sponsor',
     },
     padrinos: [{ firstName: 'Emmanuel', lastName: 'Castillo' }],
@@ -226,17 +235,13 @@ export const padrinosData: PadrinoCategory[] = [
       { firstName: 'Rosie', lastName: 'Veliz' },
     ],
   },
-  // {
-  //   id: 'limusina',
-  //   icon: '✦',
-  //   category: { es: 'Padrinos de Limusina', en: 'Limousine Sponsors' },
-  //   padrinos: [
-  //     { firstName: 'Leticia' },
-  //     { firstName: 'Adrian', lastName: 'Andrade' },
-  //     { firstName: 'Alfredo', lastName: 'Calderon' },
-  //     { firstName: 'Chalo' },
-  //     { firstName: 'Maciel' },
-  //     { firstName: 'Eugenio' },
-  //   ],
-  // },
+  {
+    id: 'limusina',
+    icon: '✦',
+    category: { es: 'Padrinos de Limusina', en: 'Limousine Sponsors' },
+    padrinos: [
+      { firstName: 'Alfredo', lastName: 'Calderon' },
+      { firstName: 'Gonsalo', lastName: 'Martinez' },
+    ],
+  },
 ];

@@ -317,7 +317,7 @@ export default function PadrinosSection() {
         >
           {padrinosData.map((category, i) => (
             <CategoryCard
-              key={category.id}
+              key={`${category.id}-${locale}`}
               category={category}
               index={i}
               locale={locale}

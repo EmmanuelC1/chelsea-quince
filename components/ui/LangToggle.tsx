@@ -9,24 +9,69 @@ export default function LangToggle() {
     <button
       onClick={toggleLocale}
       aria-label="Toggle language"
-      className="
-        fixed top-5 right-5 z-50
-        flex items-center gap-1.5
-        px-3 py-1.5
-        text-xs font-medium tracking-widest uppercase
-        rounded-full
-        border border-white/30
-        bg-white/10 backdrop-blur-md
-        text-white/80
-        hover:bg-white/20 hover:text-white
-        transition-all duration-300
-      "
+      style={{
+        position: 'fixed',
+        top: '1.25rem',
+        right: '1.25rem',
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.4rem',
+        padding: '0.45rem 1rem',
+        borderRadius: '100px',
+        // Dark-tinted glass — readable on both light and dark sections
+        background: 'rgba(10, 15, 30, 0.55)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        border: '1px solid rgba(191, 215, 246, 0.2)',
+        boxShadow: '0 2px 12px rgba(0,0,0,0.15)',
+        cursor: 'pointer',
+        transition: 'background 0.25s ease, border-color 0.25s ease',
+        fontFamily: 'var(--font-body)',
+        fontSize: '0.6rem',
+        letterSpacing: '0.22em',
+        textTransform: 'uppercase' as const,
+        minWidth: '72px',
+        justifyContent: 'center',
+        overflow: 'visible',
+      }}
+      onMouseEnter={e => {
+        (e.currentTarget as HTMLButtonElement).style.background =
+          'rgba(10, 15, 30, 0.75)';
+        (e.currentTarget as HTMLButtonElement).style.borderColor =
+          'rgba(191, 215, 246, 0.4)';
+      }}
+      onMouseLeave={e => {
+        (e.currentTarget as HTMLButtonElement).style.background =
+          'rgba(10, 15, 30, 0.55)';
+        (e.currentTarget as HTMLButtonElement).style.borderColor =
+          'rgba(191, 215, 246, 0.2)';
+      }}
     >
-      <span className={locale === 'es' ? 'text-white' : 'text-white/40'}>
+      <span
+        style={{
+          color:
+            locale === 'es' ? 'var(--color-primary)' : 'rgba(191,215,246,0.35)',
+          transition: 'color 0.25s ease',
+        }}
+      >
         ES
       </span>
-      <span className="text-white/30">|</span>
-      <span className={locale === 'en' ? 'text-white' : 'text-white/40'}>
+      <span
+        style={{
+          color: 'rgba(191,215,246,0.25)',
+          fontSize: '0.55rem',
+        }}
+      >
+        |
+      </span>
+      <span
+        style={{
+          color:
+            locale === 'en' ? 'var(--color-primary)' : 'rgba(191,215,246,0.35)',
+          transition: 'color 0.25s ease',
+        }}
+      >
         EN
       </span>
     </button>

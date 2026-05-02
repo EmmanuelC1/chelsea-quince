@@ -331,7 +331,7 @@ function SignatureLine({ text }: { text: string }) {
 
 // ─── Main section ─────────────────────────────────────────────────────────────
 export default function ClosingScene() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const c = t.closing;
 
   // Split message on \n for multi-line rendering
@@ -388,6 +388,7 @@ export default function ClosingScene() {
 
       {/* ── Content ── */}
       <div
+        key={locale}
         style={{
           position: 'relative',
           zIndex: 1,
