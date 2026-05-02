@@ -423,16 +423,17 @@ export default function ClosingScene() {
         </motion.div>
 
         {/* Heading — Chelsea Castillo */}
-        <motion.div {...fadeUp(0.25)} style={{ lineHeight: 1 }}>
+        <motion.div {...fadeUp(0.25)}>
           <h2
+            className="shimmer-text animate-fade-up delay-600"
             style={{
-              fontFamily: 'var(--font-cormorant)',
+              fontFamily: 'var(--font-script)',
               fontSize: 'clamp(2.6rem, 8vw, 4.2rem)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: '#fafafa',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.02em',
               margin: 0,
-              lineHeight: 1.05,
+              // lineHeight: 1.05,
             }}
           >
             {c.heading}

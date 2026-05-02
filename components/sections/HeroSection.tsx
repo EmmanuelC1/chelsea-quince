@@ -168,11 +168,11 @@ export default function HeroSection() {
         <h1
           className="shimmer-text animate-fade-up delay-600"
           style={{
-            fontFamily: 'var(--font-cormorant)',
+            fontFamily: 'var(--font-script)',
             fontSize: 'clamp(3.8rem, 13vw, 8.5rem)',
-            fontWeight: 300,
-            lineHeight: 0.95,
-            letterSpacing: '-0.02em',
+            fontWeight: 400,
+            // lineHeight: 0.95,
+            letterSpacing: '0.02em',
             margin: '0.1rem 0 0.25rem',
             color: '#f0f4fa',
             textShadow: '0 2px 40px rgba(0,0,0,0.5)',
