@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLang } from '@/context/LangContext';
 import { honorChambelan, courtCouples, CourtMember } from '@/data/court';
@@ -67,20 +68,32 @@ function MemberAvatar({
         justifyContent: 'center',
         flexShrink: 0,
         boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <span
-        style={{
-          fontFamily: 'var(--font-cormorant)',
-          fontSize: size * 0.42,
-          fontWeight: 400,
-          color: 'rgba(255,255,255,0.85)',
-          lineHeight: 1,
-          userSelect: 'none',
-        }}
-      >
-        {member.firstName.charAt(0).toUpperCase()}
-      </span>
+      {member.image ? (
+        <Image
+          src={member.image}
+          alt={`${member.firstName} ${member.lastName}`}
+          fill
+          sizes={`${size}px`}
+          style={{ objectFit: 'cover', objectPosition: 'center 55%' }}
+        />
+      ) : (
+        <span
+          style={{
+            fontFamily: 'var(--font-cormorant)',
+            fontSize: size * 0.42,
+            fontWeight: 400,
+            color: 'rgba(255,255,255,0.85)',
+            lineHeight: 1,
+            userSelect: 'none',
+          }}
+        >
+          {member.firstName.charAt(0).toUpperCase()}
+        </span>
+      )}
     </div>
   );
 }
@@ -108,7 +121,6 @@ function RoleLabel({ role, t }: { role: CourtMember['role']; t: any }) {
 }
 
 // ─── Shimmer card wrapper ─────────────────────────────────────────────────────
-// Handles hover lift + shimmer sweep via React state to avoid Framer conflicts
 
 function ShimmerCard({
   children,
@@ -154,7 +166,6 @@ function ShimmerCard({
           zIndex: 2,
         }}
       />
-
       {children}
     </div>
   );
@@ -364,13 +375,10 @@ function MemberModal({
   useEffect(() => {
     const handler = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', handler);
-
-    // Prevent scrollbar shift on desktop
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = `${scrollbarWidth}px`;
-
     return () => {
       window.removeEventListener('keydown', handler);
       document.body.style.overflow = '';
@@ -387,7 +395,6 @@ function MemberModal({
 
   return (
     <>
-      {/* Backdrop — separate from card so animations don't interfere */}
       <motion.div
         key="backdrop"
         initial={{ opacity: 0 }}
@@ -405,7 +412,6 @@ function MemberModal({
         }}
       />
 
-      {/* Card — spring in independently */}
       <div
         onClick={onClose}
         style={{
@@ -480,6 +486,7 @@ function MemberModal({
             ✦
           </div>
 
+          {/* Larger avatar in modal */}
           <MemberAvatar member={member} size={100} />
 
           <div

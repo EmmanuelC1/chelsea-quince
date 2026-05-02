@@ -25,7 +25,7 @@ export const honorChambelan: CourtMember = {
   firstName: 'Mateo',
   lastName: 'Villalobos',
   role: 'honor',
-  image: null,
+  image: '/images/court/mateo.jpg',
   placeholderColor: '#BFD7F6',
   dedication: {
     es: 'El honor de acompañar a Chelsea en este momento especial.',
@@ -42,7 +42,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Jimenez',
       role: 'chambelan',
       coupleId: 'couple-1',
-      image: null,
+      image: '/images/court/erick.jpg',
       placeholderColor: '#C5D8F0',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -55,7 +55,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Tapia',
       role: 'dama',
       coupleId: 'couple-1',
-      image: null,
+      image: '/images/court/erandi.jpg',
       placeholderColor: '#D4E8F7',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -71,7 +71,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Nuñez',
       role: 'chambelan',
       coupleId: 'couple-2',
-      image: null,
+      image: '/images/court/gabriel.jpg',
       placeholderColor: '#C0D5EE',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -84,7 +84,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Bonilla',
       role: 'dama',
       coupleId: 'couple-2',
-      image: null,
+      image: '/images/court/daniela.jpg',
       placeholderColor: '#CCE0F5',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -100,7 +100,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Cruz',
       role: 'chambelan',
       coupleId: 'couple-3',
-      image: null,
+      image: '/images/court/dylan.jpg',
       placeholderColor: '#B8D0EC',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -113,7 +113,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Muñoz',
       role: 'dama',
       coupleId: 'couple-3',
-      image: null,
+      image: '/images/court/marjorie.jpg',
       placeholderColor: '#C8DCF4',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -129,7 +129,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Zamora',
       role: 'chambelan',
       coupleId: 'couple-4',
-      image: null,
+      image: '/images/court/david.jpg',
       placeholderColor: '#BBCFE9',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',
@@ -142,7 +142,7 @@ export const courtCouples: CourtCouple[] = [
       lastName: 'Villaseñor',
       role: 'dama',
       coupleId: 'couple-4',
-      image: null,
+      image: '/images/court/cely.jpg',
       placeholderColor: '#C4DAF3',
       dedication: {
         es: 'Gracias por ser parte de esta noche especial.',

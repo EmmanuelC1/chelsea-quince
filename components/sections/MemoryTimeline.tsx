@@ -341,7 +341,6 @@ export default function MemoryTimeline() {
   const [isAllStacked, setIsAllStacked] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const prevIndexRef = useRef(0);
-  const directionRef = useRef<'forward' | 'backward'>('forward');
 
   const handleProgress = useCallback((progress: number) => {
     const total = memories.length;
@@ -360,17 +359,12 @@ export default function MemoryTimeline() {
     const withinCard = scaled - index;
 
     if (index !== prevIndexRef.current) {
-      directionRef.current =
-        index > prevIndexRef.current ? 'forward' : 'backward';
       setStackCount(index);
       prevIndexRef.current = index;
     }
 
     setActiveIndex(index);
-    // Only trigger sendToStack animation when scrolling forward
-    const isTransitioning =
-      withinCard > 0.78 && directionRef.current === 'forward';
-    setPhase(isTransitioning ? 'transitioning' : 'featured');
+    setPhase(withinCard > 0.78 ? 'transitioning' : 'featured');
   }, []);
 
   useEffect(() => {
@@ -390,12 +384,6 @@ export default function MemoryTimeline() {
         end: `+=${memories.length * 120}vh`,
         pin: true,
         pinSpacing: true,
-        snap: {
-          snapTo: memories.map((_, i) => i / (memories.length - 1)),
-          duration: { min: 0.6, max: 0.9 },
-          ease: 'power2.inOut',
-          delay: 0.12,
-        },
         onUpdate: self => handleProgress(self.progress),
       });
     }
