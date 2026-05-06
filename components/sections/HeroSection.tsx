@@ -51,7 +51,7 @@ export default function HeroSection() {
         }}
       >
         <Image
-          src="/images/chelsea-hero.JPEG"
+          src="/images/chelsea-hero.jpg"
           alt="Chelsea Castillo"
           fill
           priority
